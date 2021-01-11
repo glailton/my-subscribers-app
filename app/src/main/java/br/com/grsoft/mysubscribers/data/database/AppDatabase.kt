@@ -1,4 +1,4 @@
-package br.com.grsoft.mysubscribers.data.database.AppDatabase
+package br.com.grsoft.mysubscribers.data.database
 
 import android.content.Context
 import androidx.room.Database

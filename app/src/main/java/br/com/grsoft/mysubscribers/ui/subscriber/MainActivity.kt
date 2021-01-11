@@ -1,4 +1,4 @@
-package br.com.grsoft.mysubscribers
+package br.com.grsoft.mysubscribers.ui.subscriber
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import br.com.grsoft.mysubscribers.R
 import br.com.grsoft.mysubscribers.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
