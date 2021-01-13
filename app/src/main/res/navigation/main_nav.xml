@@ -14,5 +14,9 @@
         android:id="@+id/subscriberListFragment"
         android:name="br.com.grsoft.mysubscribers.ui.subscriberlist.SubscriberListFragment"
         android:label="@string/subscriber_list_title"
-        tools:layout="@layout/subscriber_list_fragment" />
+        tools:layout="@layout/subscriber_list_fragment" >
+        <action
+            android:id="@+id/action_subscriberListFragment_to_subscriberFragment"
+            app:destination="@id/subscriberFragment" />
+    </fragment>
 </navigation>

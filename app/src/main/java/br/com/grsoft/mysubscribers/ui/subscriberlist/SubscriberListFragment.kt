@@ -9,12 +9,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import br.com.grsoft.mysubscribers.R
 import br.com.grsoft.mysubscribers.data.database.AppDatabase
 import br.com.grsoft.mysubscribers.data.database.dao.SubscriberDAO
 import br.com.grsoft.mysubscribers.data.database.entity.SubscriberEntity
 import br.com.grsoft.mysubscribers.data.repository.DatabaseDataSource
 import br.com.grsoft.mysubscribers.data.repository.SubscriberRepository
 import br.com.grsoft.mysubscribers.databinding.SubscriberListFragmentBinding
+import br.com.grsoft.mysubscribers.extensions.navigateWithAnimations
 import br.com.grsoft.mysubscribers.ui.subscriber.SubscriberViewModel
 
 class SubscriberListFragment : Fragment() {
@@ -42,6 +45,7 @@ class SubscriberListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observerEvents()
+        configureViewListeners()
     }
 
     private fun observerEvents() {
@@ -52,6 +56,17 @@ class SubscriberListFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = subscriberAdapter
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getSubscribers()
+    }
+
+    private fun configureViewListeners() {
+        binding.fabAddSubscriber.setOnClickListener {
+            findNavController().navigateWithAnimations(R.id.action_subscriberListFragment_to_subscriberFragment)
         }
     }
 

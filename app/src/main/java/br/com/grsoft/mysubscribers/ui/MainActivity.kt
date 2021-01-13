@@ -1,4 +1,4 @@
-package br.com.grsoft.mysubscribers.ui.subscriber
+package br.com.grsoft.mysubscribers.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
